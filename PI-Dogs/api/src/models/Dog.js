@@ -22,7 +22,7 @@ module.exports = (sequelize) => {
      allowNull: false
    },
    age: {
-     type: DataTypes.STRING
+     type: DataTypes.STRING,
    }
    
  });
