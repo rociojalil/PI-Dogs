@@ -122,7 +122,7 @@ router.post("/dog", async (req, res, next) => {
     }
   });
 
-  post 
+  
 
 
 module.exports = router;
