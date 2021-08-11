@@ -106,7 +106,7 @@ router.get('/temperament', async (req, res, next) => {try {
 
 })
 
-
+// ver tema post
 router.post("/dog", async (req, res, next) => {
     let { name, height, age, weight, temperament } = req.body;
     try {
@@ -121,6 +121,8 @@ router.post("/dog", async (req, res, next) => {
       next(error);
     }
   });
+
+  post 
 
 
 module.exports = router;
