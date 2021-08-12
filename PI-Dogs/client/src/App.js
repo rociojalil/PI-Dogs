@@ -1,6 +1,11 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import LandingPage from './components/LandingPage/Landing';
+import Home from './components/Home/Home';
+import DogCards from './components/DogCards/DogCards';
+import CreateDog from './components/CreateDog/CreateDog';
+import NavBar from './components/NavBar/Nav';
 
 
 
@@ -10,10 +15,17 @@ import { BrowserRouter, Route } from 'react-router-dom';
 function App() {
   return (
       <React.Fragment>
+        <Route exact path="/" component={LandingPage} />
+          <Route>
+          <NavBar path="/home" component={NavBar}/>
+          <Route exact path="/home" component={Home}  />
+          <Route exact path="/home/:id" render={({ match }) => <DogCards id={match.params.id} />}></Route>
+          <Route exact path="/createDog" component={CreateDog} />
+          </Route>
 
-    <div className="App">
+    {/* <div className="App">
       <h1>Henry Dogs</h1>
-    </div>
+    </div> */}
       </React.Fragment>
   );
 }
