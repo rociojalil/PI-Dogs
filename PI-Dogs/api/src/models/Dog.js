@@ -9,20 +9,27 @@ module.exports = (sequelize) => {
       allowNull: false,
       primaryKey: true
     },
-   name: {
-     type: DataTypes.STRING,
-     allowNull: false,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
    },
-   height: {
-     type: DataTypes.STRING,
-     allowNull: false
+    height: {
+      type: DataTypes.STRING,
+      allowNull: false
    },
-   weight: {
-     type: DataTypes.STRING,
-     allowNull: false
+     weight: {
+      type: DataTypes.STRING,
+      allowNull: false
    },
-   age: {
-     type: DataTypes.STRING,
+     life_span: {
+      type: DataTypes.STRING,
+   },
+    image: {
+      type: DataTypes.STRING,
+   },
+    db:{
+      type: DataTypes.BOOLEAN,
+      defaultvalue: true
    }
  });
 };
