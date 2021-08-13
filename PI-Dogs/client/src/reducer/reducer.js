@@ -1,3 +1,5 @@
+// ver si hay que importar las actions o funcionan igual
+
 const initialState = {
     dogs: [],
     filterDog: [],
@@ -21,7 +23,7 @@ const reducer = (state = initialState, action) => {
         case 'GET_RAZA':
                     return {
                     ...state,
-                    dogs: action.payload
+                    filterDog: action.payload
                     }
         case 'GET_TEMP':
                     return {
@@ -68,7 +70,7 @@ const reducer = (state = initialState, action) => {
                     }
         case 'TEMP_FILTER': {
                 // ...state,
-                // filteredBreeds: filterTemperament(state.breeds, action.payload)
+                // filterDog: filterTemperament(state.dogs, action.payload)
                 
                 let filtapi = state.dogs.filter( e => e.temperament?.includes(action.payload))
                 let filtdb = state.dogs.filter(e => e.temperaments?.map((temp)=> temp.name)?.includes(action.payload))
@@ -78,47 +80,41 @@ const reducer = (state = initialState, action) => {
                 if(action.payload === 'All'){
                     return{
                         ...state,
-                        filterDog: state.breeds
+                        filterDog: state.dogs
                         
                     }
                 }else{
                     return{
                         ...state,
-                        //breeds: newArrayFil,
+                        //dogs: newArrayFil,
                         filterDog: newArrayFil,
+                        }
+                        }
                     }
-                }
-            }
-        case 'CREATE_BREED':
-                    return {
-                        ...state,
-                        dogs: state.dogs.concat(action.payload)
-                    }
-
         case 'DB':
                     return {
                         ...state,
                         dogs: state.dogs.filter((b) => b.db ),
                         filterDog: state.filterDog.filter((b) => b.db),
     
-            }
+                    }
         case 'API': 
                     return {
                         ...state,
                         dogs: state.dogs.filter((b) => !b.db),
                         filterDog:state.filterDog.filter((b) => !b.db),
-            }
+                    }
         case 'ALL': 
                     return {
                         ...state,
                         dogs: state.dogs,
                         filterDog: state.filterDog,
-            }
+                    }
         default:
                     return {
-                        state
-            }
-}
+                        ...state,
+                    }
+        }
 }
 
 
