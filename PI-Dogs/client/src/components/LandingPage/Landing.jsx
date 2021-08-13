@@ -1,21 +1,24 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import styles from './Landing.module.css'
-import LazyLoad from 'react-lazyload'
+import { Link } from 'react-router-dom';
+import  styles from './Landing.module.css';
+import LazyLoad from 'react-lazyload';
+
 
 function Landing() {
     return (
         <LazyLoad>
-            <div className={styles.divMain}>
+            <div className={styles.body}>
+                <div className={styles.title}>
+                        <h1>Welcome to Dogs App!</h1>
 
+                        <p className={styles.texto}> </p>
+                        <Link to='/home' style={{ color: "black", textDecoration: "none" }}>
 
-                <div className={styles.card}>
-
-                        <label><h1>Dog App</h1></label>
-                    <Link to='/home' style={{ color: "black", textDecoration: "none" }}>
-                        <button className={styles.btnStart}>
-                            Start
-                        </button>
+                        <div className={styles.main}>
+                            <button className={styles.btn}>
+                                        Start
+                            </button>
+                        </div>
                     </Link>
                 </div>
 
@@ -24,4 +27,4 @@ function Landing() {
     )
 }
 
-export default Landing
+export default Landing;
