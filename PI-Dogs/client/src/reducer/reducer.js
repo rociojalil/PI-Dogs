@@ -13,72 +13,112 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 dogs: action.payload
             }
-        case 'GET_RAZA':
-            return {
-                ...state,
-                dogs: action.payload
-            }
         case 'GET_ID':
-            return {
-                ...state,
-                dogDetail: action.payload
-            }
-        case 'order_ZA':
-            return {
-                ...state,
-                dogs: action.payload
-            }
-        case 'order_AZ':
-            return {
-                ...state,
-                dogs: action.payload
-            }
-        case 'ORDER_LIGHT':
-            return {
-                ...state,
-                dogs: action.payload
-            }
-        case 'ORDER_HEAVY':
-            return {
-                ...state,
-                dogs: action.payload
-            }
+                return {
+                    ...state,
+                    dogDetail: action.payload
+                }
+        case 'GET_RAZA':
+                    return {
+                        ...state,
+                        dogs: action.payload
+                    }
         case 'GET_TEMP':
-            return {
-                ...state,
-                temps: action.payload
+                    return {
+                        ...state,
+                        temps: action.payload
+                    }
+        case 'ORDER_ASC': 
+                    return {
+                        ...state,
+                        breeds: state.breeds
+                        .filter((b) => b.name !== null)
+                        .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)),
+                        filteredBreeds: state.filteredBreeds.filter((b) => b.name !== null)
+                        .sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)),
+                        
+                    }
+        case 'ORDER_DESC': 
+                    return {
+                        ...state,
+                        breeds: state.breeds
+                        .filter((b) => b.name !== null)
+                        .sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1)),
+                        filteredBreeds: state.filteredBreeds.filter((b) => b.name !== null)
+                        .sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1)),
+                    }
+        case 'ORDER_WEIGHTMAX': 
+                    return {
+                        ...state,
+                        breeds: state.breeds
+                        .filter((b) => b.weight !== null)
+                        .sort((a, b) => (a.weight > b.weight ? 1 : -1)),
+                        filteredBreeds: state.filteredBreeds.filter((b) => b.weight !== null)
+                        .sort((a, b) => (a.weight > b.weight ? 1 : -1)),
+                    }
+                
+        case 'ORDER_WEIGHTMIN': 
+                    return {
+                        ...state,
+                        breeds: state.breeds
+                        .filter((b) => b.weight !== null)
+                        .sort((a, b) => (a.weight < b.weight ? 1 : -1)),
+                        filteredBreeds: state.filteredBreeds.filter((b) => b.weight !== null)
+                        .sort((a, b) => (a.weight < b.weight ? 1 : -1)),
+                    }
+        case 'TEMP_FILTER': {
+                // ...state,
+                // filteredBreeds: filterTemperament(state.breeds, action.payload)
+                
+                let filtapi = state.breeds.filter( e => e.temperament?.includes(action.payload))
+                let filtdb = state.breeds.filter(e => e.temperaments?.map((temp)=> temp.name)?.includes(action.payload))
+                
+                let newArrayFil= filtapi.concat(filtdb)
+                
+                if(action.payload === 'All'){
+                    return{
+                        ...state,
+                        filteredBreeds: state.breeds
+                        
+                    }
+                }else{
+                    return{
+                        ...state,
+                        //breeds: newArrayFil,
+                        filteredBreeds: newArrayFil,
+                    }
+                }
             }
         case 'CREATE_BREED':
-            return {
-                ...state,
-                dogs: state.breeds.concat(action.payload)
-            }
-        case 'FILTER':
-            return {
-                ...state,
-                filter: action.payload
-            }
+                    return {
+                        ...state,
+                        dogs: state.breeds.concat(action.payload)
+                    }
 
-        case 'DB': 
-            return {
-                ...state,
-                filter: state.breeds.filter(b => b.id.length > 6).sort()
+        case 'DB':
+                    return {
+                        ...state,
+                        breeds: state.breeds.filter((b) => b.db ),
+                        filteredBreeds: state.filteredBreeds.filter((b) => b.db),
+    
             }
         case 'API': 
-            return {
-                ...state,
-                filter: state.breeds.filter(b => b.id < 500).sort()
+                    return {
+                        ...state,
+                        breeds: state.breeds.filter((b) => !b.db),
+                        filteredBreeds:state.filteredBreeds.filter((b) => !b.db),
             }
         case 'ALL': 
-            return {
-                ...state,
-                filter: state.breeds
+                    return {
+                        ...state,
+                        breeds: state.breeds,
+                        filteredBreeds:state.filteredBreeds
             }
         default:
-            return {
-                state
+                    return {
+                        state
             }
-    }
+}
 }
 
 
