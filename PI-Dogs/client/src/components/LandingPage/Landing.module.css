@@ -52,14 +52,29 @@
 
 .texto {
     color: black;
-    font-family: Georgia, serif;
+    /* font: bold 90% monospace; */
+    font-family: "Segoe UI";
+    font-weight: 500;
+    display: flexbox;
+    text-align: center;
+    font-size: 25px;
+    position: absolute;
+    top: 15%; 
+    width: 100%;
+    
+
+}
+.parra{
+    color: black;
+    /* font: bold 90% monospace; */
+    font-family: cursive;
+    font-weight: 400;
     display: flexbox;
     text-align: center;
     font-size: 20px;
     position: absolute;
-    top: 20%; 
+    top: 25%; 
     width: 100%;
-    
 
 }
 
@@ -74,6 +89,7 @@
 
 
 .btn {
+    top: 18%;
    width: 200px;
    height: 60px;
    font-size: 1.5rem;
