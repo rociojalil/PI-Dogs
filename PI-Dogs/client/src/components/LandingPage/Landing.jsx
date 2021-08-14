@@ -16,7 +16,7 @@ function Landing() {
                         Great! Dogs are an excellent company! <br></br>     
                      Although now you will know all the different breeds that there are and details of them, <br></br> do not forget that stray dogs also have a lot of love to give!
                         ALL DOGS ARE BEAUTIFUL! <br></br>
-                        Let's get to know them </p>
+                        Let's get to know them click en start</p>
                         <Link to='/home' style={{ color: "black", textDecoration: "none" }}>
 
                         <div className={styles.main}>
