@@ -43,7 +43,7 @@
         /* text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000; */
         /* text-shadow: -2px -2px 1px #000; */
     position: relative;
-    top: 20%; 
+    top: 25%; 
     width: 100%;
     margin-top: -180px !important;
     left: 20%;
@@ -59,7 +59,7 @@
     text-align: center;
     font-size: 25px;
     position: absolute;
-    top: 15%; 
+    top: 16%; 
     width: 100%;
     
 
@@ -67,7 +67,7 @@
 .parra{
     color: black;
     /* font: bold 90% monospace; */
-    font-family: cursive;
+    font-family: "Segoe UI";
     font-weight: 400;
     display: flexbox;
     text-align: center;
@@ -89,7 +89,7 @@
 
 
 .btn {
-    top: 18%;
+    top: 2%;
    width: 200px;
    height: 60px;
    font-size: 1.5rem;
