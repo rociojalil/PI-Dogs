@@ -6,8 +6,8 @@ function Nav() {
     return (
         <div className={styles.navBar}>
             <div className={styles.logo}>
-                <p>Dog App</p>
-                <i class="fas fa-paw"></i>
+                <p>Dogs App</p>
+                {/* <i class="fas fa-paw"></i> */}
             </div>
             <ul className={styles.navigation}>
                 <li><a href="/">Home</a></li>

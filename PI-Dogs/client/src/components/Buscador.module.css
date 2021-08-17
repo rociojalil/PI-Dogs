@@ -1,34 +1,97 @@
-.main {
-    display: flex;
-    justify-content: center;
-    width: 460px;
-    height: 40px;
-    margin: auto;
-    background-color: #000000ab;
-    border-radius: 20px;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.searchBox {
+    position: absolute;
+    top: 6%;
+    left: 36%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+}
+.input{
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.input[type="text"] {
+    background: #fff;
+    width: 340px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding: 0 25px;
+    border-radius: 25px 0 0 25px;
+}
+.input[type="submit"] {
+    position: relative;
+    border-radius: 0 25px 25px 0;
+    left: -5px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: black;
+    color: white;
+}
+.input[type="submit"]:hover {
+    background: grey;
+    opacity: 1;
+}
+
+
+/* este era una searchbar interactiva que se movia para el costado al posicionar el mourse para escribir
+ pero en el component donde escribo html no me toma el icono de buscador y no queda bien sin eso */
+/* 
+.searchBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80px;
+    height: 50px;
+    overflow: hidden;
+    transition: all 1s;
    
 }
 
-.main input {
-    background-color: transparent;
-    width: 460px;
-    height: 40px;
-    border: none;
-    margin: auto;
-    border-radius: 20px;
-    align-items: center;
-    color: #ff9100;
-    text-shadow: 2px 2px #000000;
-    text-align: center;
-    font-size: 25px;
-    font-weight: bold;
+.searchBox input {
+   position: absolute;
+   width: 80%;
+   height: 100%;
+   outline: none;
+   border: none;
+   background: #252525;
+   color: white;
+   font-size: 1.5rem;
+   padding: 0 10px;
+   opacity: 0;
+   transition: all 1s;
 }
 
-.main input:focus{
-    outline: none;
-    background-color:#000000;
+.searchBox:hover{
+    width: 400px;
 }
-.main input::placeholder{
-    color: #ff9100;
-    text-shadow: 2px 2px #000000;
+.searchBox:hover input{
+    opacity: 1;
 }
+.searchBox .icon{
+    position: absolute;
+    right: 0;
+    width: 80px;
+    height: 100%;
+    background:#6930c3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    transition: all .4s;
+}
+.searchBox .icon:hover{
+    background: #8256c9
+} */

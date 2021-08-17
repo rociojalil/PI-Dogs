@@ -4,6 +4,8 @@
 } */
 
 .main {
-    background-color: #f1f1f1;
+    background: url(../img/este.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     min-height: 100vh;
 }

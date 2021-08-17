@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import {  useState } from 'react'
 import { getBreedsRace } from '../actions/actions';
-import styles from './Buscador.module.css'
+import styles from './Buscador.module.css';
 
 function Buscador() {
     const [busqueda, setBusqueda] = useState('');
@@ -27,20 +27,44 @@ function Buscador() {
 
     // const breed = useSelector((state) => state.breeds)
 
+
     return (
-        <div className={styles.main}>
+        <div className={styles.searchBox}>
             <form onSubmit={(e) => handleSubmit(e)}>
-                <div>
-                    <input
+                <div className={styles.searchBox}>
+                    <input className={styles.input}
                         type='text'
                         // value={busqueda}
-                        placeholder='Search Breed'
+                        placeholder='Type...'
                         onChange={(e) => handleChange(e.target.value)}
-                    />
+                        />
+                        <input className={styles.input}
+                         type="submit" value= "Search" />
+                         <div className={styles.icon}>
+                    </div>
                 </div>
             </form>
         </div>
     );
 }
 
+
+
+//     return (
+//         <div className={styles.searchBox}>
+//             <form onSubmit={(e) => handleSubmit(e)}>
+//                 <div className={styles.searchBox}>
+//                     <input
+//                         type='text'
+//                         // value={busqueda}
+//                         onChange={(e) => handleChange(e.target.value)}
+//                         />
+//                          <div className={styles.icon}>
+//                              <i className = "fas fa-search fa-2x" ></i>
+//                     </div>
+//                 </div>
+//             </form>
+//         </div>
+//     );
+// }
 export default Buscador
