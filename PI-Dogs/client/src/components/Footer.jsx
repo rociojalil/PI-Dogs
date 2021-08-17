@@ -2,35 +2,32 @@ import React from 'react'
 import styles from './Footer.module.css'
 
 
+
 function Footer() {
     return (
         <div className={styles.mainFooter}>
             <div className={styles.about}>
                 <p>
-                    DogsApp
-                    <br />
-                    Rocío De Luz Jalil
-                    <br />
-                    rojalilparedes@gmail.com
+                    Dogs App
+                
                 </p>
             </div>
+            <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'/>
 
-            <div className={styles.social}>
-
-                <a href="https://github.com/caszofficial" target="blank">
-                    <i class="fab fa-github" ></i>
-                </a>
-
-                <a href="https://www.instagram.com/caszofficial/" target="blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-
-                <a href="https://www.linkedin.com/in/santiago-ca%C3%B1as-zapata-b45b101bb/" target="blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-
-            </div>
-        </div>
+            <div class={styles.socialMedia}>
+			    <a href="https://www.linkedin.com/in/rocio-de-luz-jalil/"
+                 rel='noreferrer' target="_BLANK" className={styles.socialMediaIcon}>
+                <i class='bx bxl-linkedin' ></i>
+			    </a>
+			    <a href="https://github.com/rociojalil" 
+                rel='noreferrer' target="_BLANK" className={styles.socialMediaIcon}>
+                <i class='bx bxl-github'></i>
+				</a>
+			    <a href="mailto:rojalilparedes@gmail.com" className={styles.socialMediaIcon}>
+				<i class='bx bx-mail-send'></i>
+			</a>
+			</div>
+		</div>
     )
 }
 
