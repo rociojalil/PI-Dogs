@@ -35,11 +35,11 @@
     border: none;
     outline: none;
     cursor: pointer;
-    background: black;
-    color: white;
+    background: rgb(71, 71, 71);
+    color: rgb(255, 255, 255);
 }
 .input[type="submit"]:hover {
-    background: grey;
+    background: rgb(0, 0, 0);
     opacity: 1;
 }
 

@@ -48,23 +48,4 @@ function Buscador() {
     );
 }
 
-
-
-//     return (
-//         <div className={styles.searchBox}>
-//             <form onSubmit={(e) => handleSubmit(e)}>
-//                 <div className={styles.searchBox}>
-//                     <input
-//                         type='text'
-//                         // value={busqueda}
-//                         onChange={(e) => handleChange(e.target.value)}
-//                         />
-//                          <div className={styles.icon}>
-//                              <i className = "fas fa-search fa-2x" ></i>
-//                     </div>
-//                 </div>
-//             </form>
-//         </div>
-//     );
-// }
 export default Buscador

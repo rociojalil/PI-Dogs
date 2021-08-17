@@ -1,38 +1,46 @@
+/* *{
+    margin: 0;
+    padding: 0;
+} */
 .navBar {
     display: grid;
     grid-template-areas: "logo buscador nav";
     /* background-color: #ff9100; */
     /* border-bottom: 4px solid #ff9100; */
-    padding: 12px;
+    padding: 18px;
+    /* background-color:  rgba(0, 0, 0, 0.397); */
 }
 
-.logo {
+
+.dogApp {
     grid-area: logo;
     display: flex;
+    font-family: Georgia, serif;
 }
 
-.logo i{
-    font-size: 40px;
+.dogApp i{
+    font-size: 20px;
     color: #000000;
-    text-shadow: 2px 2px 1px #ff9100;
+    text-shadow: 2px 2px 1px #000000;
     margin-top: 10px;
+    
 }
 
-.logo p {
-    font-size: 40px;
+.dogApp p {
+    font-size: 38px;
     font-weight: bold;
     justify-content: flex-start;
-     color: #ff9100;
-    /* text-shadow: 2px 2px #000000; */
-    /* color: #ffffff; */
-    text-shadow: 2px 2px 1px #000000;
+     color: #ffffff;
+    text-shadow: 2px 2px #000000; 
+    color: #ffffff;
 }
 
 .navigation {
     grid-area: nav;
     display: flex;
     justify-content: space-evenly;
-}
+    font-family: Georgia, serif;
+} 
 
 .navigation li {
     margin: auto;
@@ -44,21 +52,20 @@
 
 .navigation li a {
     text-align: center;
-    font-size: 40px;
+    font-size: 35px;
     text-decoration: none;
     margin: auto;
-    color: #ff9100;
-    text-shadow: 2px 2px 1px #000000;
+    color: #ffffff;
+
     font-weight: bold;
     transition: color, text-shadow 250ms;
-}
+} 
 
 .navigation li a:hover {
     color: #000000;
-    text-shadow: 2px 2px 1px #ff9100;
-}
+} 
 
-.buscador {
+/* .buscador {
     grid-area: buscador;
     margin: auto;
-}
+}  */
