@@ -1,0 +1,77 @@
+.main {
+    background-color: #f1f1f1;
+    min-height: 100vh;
+    height: 100%;
+}
+
+.dogDetail {
+    width: fit-content;
+    height: fit-content;
+    background-color: #00000036;
+    border: 4px solid #ff9100;
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.dogImage {
+    display: flex;
+    margin: auto;
+    width: 550px;
+    height: 300px;
+    border-radius: 5px;
+    border: 4px solid #000000;
+}
+
+.dogName {
+    text-align: center;
+    line-height: 0px;
+    word-wrap: break-word;
+    color: #ff9100;
+    text-shadow: 2px 2px 1px #000000;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.dogTemp {
+    text-align: center;
+    color: #ff9100;
+    text-shadow: 2px 2px 1px #000000;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+}
+
+.dogWeight {
+    text-align: center;
+    color: #ff9100;
+    text-shadow: 2px 2px 1px #000000;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.dogHeight {
+    text-align: center;
+    color: #ff9100;
+    text-shadow: 2px 2px 1px #000000;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.dogLife {
+    text-align: center;
+    color: #ff9100;
+    text-shadow: 2px 2px 1px #000000;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.tempBD {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff9100;
+    text-shadow: 2px 2px 1px #000000;
+}

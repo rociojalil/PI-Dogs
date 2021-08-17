@@ -7,74 +7,75 @@
     :root {
         scroll-behavior: smooth; 
     }
-    .body{
+
+.divMain{
     display: flex;
-    /* margin-top: auto; */
     height: 100vh;
-	/* 100 que ocupa pantalla */
-	background-image: linear-gradient(to top, rgba(61, 61, 61, 0.459) 0%, #25252544 100%), url('../../img/otra.jpg');
-	/* esta es toda mi imagen principal */
+    width: 100vw;
+    background-image: url('../../img/otra.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
-    /* text-align: center; */
-    /* display: flex;
-    margin-top: auto;
-    height: 100vh;
-    width: 100vw;
-    background-image: url('../../img/altacalidad.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    text-align: center; */
     align-items: center;
-    /* box-sizing:unset; */
 }
 
-
-.title {
+.title{
     color:white;
     font-family: Georgia, serif;
     display: flexbox;
-        /* align-items: center;
-        justify-content: center; */
     text-align: center;
     font-size: 30px;
-        /* color:rgb(255, 255, 255); */
-        /* text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000; */
-        /* text-shadow: -2px -2px 1px #000; */
-    position: relative;
-    top: 25%; 
-    width: 100%;
-    margin-top: -180px !important;
-    left: 20%;
-    
+    top: 10%;
+    position: fixed;
+    left: 48%;
 }
 
 .texto {
     color: black;
-    /* font: bold 90% monospace; */
-    font-family: "Segoe UI";
-    font-weight: 500;
+    font-family: Georgia, serif;
     display: flexbox;
     text-align: center;
+    font-size: 30px;
+    top: 22%;
+    position: fixed;
+    left: 58%;
+}
+
+.parra{
+    color: white;
+    font-family: Georgia, serif;
+    display: flexbox;
+    text-align: center;
+    font-weight: 500;
     font-size: 25px;
-    position: absolute;
-    top: 16%; 
-    width: 100%;
-    
+    top: 30%;
+    position: fixed;
+    left: 56%;
+}
+
+.entrada{
+    color: black;
+    font-family: "Segoe UI";
+    display: flexbox;
+    text-align: center;
+    font-weight: 300; 
+    font-size: 20px;
+    top: 40%;
+    position: fixed;
+    left: 51%; 
 
 }
-.parra{
-    color: black;
-    /* font: bold 90% monospace; */
-    font-family: "Segoe UI";
-    font-weight: 400;
+
+.final{
+    color: white;
+    font-family: Georgia, serif;
     display: flexbox;
     text-align: center;
-    font-size: 20px;
-    position: absolute;
-    top: 25%; 
-    width: 100%;
+    font-weight: 800; 
+    font-size: 30px;
+    top: 55%; 
+    position: fixed;
+    left: 61%; 
 
 }
 
@@ -84,7 +85,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: rgb(255, 255, 255); */
 }
 
 
@@ -124,3 +124,61 @@
     z-index: -1;
     transition: all 0.5s;
 }
+
+
+
+
+
+
+
+
+/* 
+
+
+.divMain {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../../img/otra.jpg');
+    background-size: auto;
+    background-repeat: no-repeat;
+    text-align: center;
+} */
+
+/* .card {
+    display: flex;
+    justify-content: flex-start;
+    /* margin: auto;
+    margin-left: 150px;
+    margin-top: 750px; */
+/* }
+
+.divMain label {
+    
+    color: #000000;  
+} */
+
+/* .btnStart {
+    margin: auto;
+    display: flex;
+    margin-top: 10px;
+    color: #000000;
+    background-color: #ff9100b7;
+    border: none;
+    width: 400px;
+    height: 50px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: none;
+    transition: background-color, 500ms;
+    font-family: 'Caveat', cursive;
+} */
+/* 
+.btnStart:hover {
+    background-color:#ff9100;
+    cursor: pointer;
+    color: white;
+} */ 

@@ -7,21 +7,27 @@ import LazyLoad from 'react-lazyload';
 function Landing() {
     return (
         <LazyLoad>
-        <div className={styles.body}>
+        <div className={styles.divMain}>
+
              <div className={styles.title}>
                 <h1>Welcome to Dogs App!</h1>
+
                      <p className={styles.texto}>
                         ¿Looking for a new buddy? <br></br> 
                     </p>
 
                     <p className={styles.parra}>
                         Great! Then you are in the right place!
-                         <br></br> <br /> 
-                        <i>Friendly reminder: Do not forget that there are also a lot of <i>stray dogs</i>
+                         <br></br> <br /> </p> 
+                         
+                     <p className={styles.entrada}>
+                        Friendly reminder: Do not forget that there are also a lot of stray dogs
                         <br></br>
-                        with a lot of love to give that are also looking for a home!</i> 
-                        <br></br> <br></br>
-                        <b>Now let's see Dogs! </b>
+                        with a lot of love to give that are also looking for a home! ❤
+                         <br></br> <br></br>
+                    <p className={styles.final}>
+                        Now let's see Dogs! 
+                        </p>
                     </p>
                         <Link to='/home' style={{ color: "black", textDecoration: "none" }}>
                             <div className={styles.main}>
@@ -37,3 +43,27 @@ function Landing() {
 }
 
 export default Landing;
+
+
+// function Landing() {
+//     return (
+//         <LazyLoad>
+//             <div className={styles.divMain}>
+
+
+//                 <div className={styles.card}>
+
+//                         <label><h1>Dog App</h1></label>
+//                     <Link to='/home' style={{ color: "black", textDecoration: "none" }}>
+//                         <button className={styles.btnStart}>
+//                             Start
+//                         </button>
+//                     </Link>
+//                 </div>
+
+//             </div>
+//         </LazyLoad>
+//     )
+// }
+
+// export default Landing

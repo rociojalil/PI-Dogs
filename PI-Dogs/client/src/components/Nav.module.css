@@ -1,0 +1,64 @@
+.navBar {
+    display: grid;
+    grid-template-areas: "logo buscador nav";
+    /* background-color: #ff9100; */
+    /* border-bottom: 4px solid #ff9100; */
+    padding: 12px;
+}
+
+.logo {
+    grid-area: logo;
+    display: flex;
+}
+
+.logo i{
+    font-size: 40px;
+    color: #000000;
+    text-shadow: 2px 2px 1px #ff9100;
+    margin-top: 10px;
+}
+
+.logo p {
+    font-size: 40px;
+    font-weight: bold;
+    justify-content: flex-start;
+     color: #ff9100;
+    /* text-shadow: 2px 2px #000000; */
+    /* color: #ffffff; */
+    text-shadow: 2px 2px 1px #000000;
+}
+
+.navigation {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navigation li {
+    margin: auto;
+    list-style: none;
+    border-bottom:3px solid #000000 ;
+    padding: 3px;
+    
+}
+
+.navigation li a {
+    text-align: center;
+    font-size: 40px;
+    text-decoration: none;
+    margin: auto;
+    color: #ff9100;
+    text-shadow: 2px 2px 1px #000000;
+    font-weight: bold;
+    transition: color, text-shadow 250ms;
+}
+
+.navigation li a:hover {
+    color: #000000;
+    text-shadow: 2px 2px 1px #ff9100;
+}
+
+.buscador {
+    grid-area: buscador;
+    margin: auto;
+}
