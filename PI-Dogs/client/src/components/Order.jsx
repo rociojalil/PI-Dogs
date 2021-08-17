@@ -11,26 +11,28 @@ function Order() {
     const dispatch = useDispatch()
 
 
-
-
-    function orderDes(e) {
+    function orderAlph(e) {
         e.preventDefault();
-        dispatch(getZA())
+        if(e.target.value === 'getAZ') {
+            dispatch(getAZ())
+        }
+        else{
+            dispatch(getZA())
+        }
     }
 
-    function orderAsc(e) {
+    // function orderAsc(e) {
+    //     e.preventDefault();
+    //     dispatch(getAZ())
+    // }
+    function orderWeight(e){
         e.preventDefault();
-        dispatch(getAZ())
-    }
-
-    function orderLight(e) {
-        e.preventDefault();
-        dispatch(getLight())
-    }
-
-    function orderHeavy(e) {
-        e.preventDefault();
-        dispatch(getHeavy())
+        if(e.target.value === 'getLight') {
+            dispatch(getLight())
+        }
+        else{
+            dispatch(getHeavy())
+        }
     }
 
     useEffect(() => {
@@ -55,17 +57,12 @@ function Order() {
                     t.name === selectedTemp ? filtered.push(b) : null
                 )
             } else {
-                console.log('holaaaa', b.temperament)
                 if (b.temperament?.includes(selectedTemp)) {
                     filtered.push(b)
                 } else {
                     console.log('nada')
                 }
 
-                
-             
-
-            
         }})
 
         dispatch(filter(filtered))
@@ -79,27 +76,31 @@ function Order() {
     const temp = useSelector(state => state.temps)
     const breed = useSelector(state => state.breeds)
 
-
+//     <form className="boton">
+//     <select className="boton" onChange={handleChange} value='' name="by">
+//         <option value="" disabled selected>Order by </option>
+//         <option value='ORDER_ASC'>Alphabet - A-Z</option>
+//         <option value='ORDER_DESC'>Alphabet - Z-A</option>
+//     </select>
+// </form>
 
     return (
         <div  className={styles.mainDiv}>
             <div className={styles.alphabetical}>
-                <label>Order by: name</label>
-                <br />
-
-                <button className={styles.btn} onClick={(e) => orderAsc(e)}>A-Z</button>
-                <button className={styles.btn} onClick={(e) => orderDes(e)}>Z-A</button>
-
-            </div>
-
-
-
-            <div  className={styles.weight}>
-                <label>Order by: weight</label>
-                <br />
-
-                <button className={styles.btn} onClick={(e) => orderLight(e)}>Weight - to +</button>
-                <button className={styles.btn} onClick={(e) => orderHeavy(e)}>Weight + to -</button>
+            <form className={styles.btn}>
+                <select className={styles.btn} onChange={orderAlph} value='' name="by">
+                    <option value="" disabled selected>Order by </option>
+                    <option value='getAZ'onClick={(e) => getAZ(e)}>Alphabet - A-Z</option>
+                    <option value='getZA'onClick={(e) => getZA(e)}>Alphabet - Z-A</option>
+                </select>
+            </form>
+            <form className={styles.btn}>
+                <select className={styles.btn} onChange={orderWeight} value='' name="by">
+                    <option value="" disabled selected>Order by Weight</option>
+                    <option value='getLight'onClick={(e) => getLight(e)}>Min - Max</option>
+                    <option value='getHeavy'onClick={(e) => getHeavy(e)}>Max - Min</option>
+                </select>
+            </form>
 
             </div>
 
@@ -139,4 +140,4 @@ function Order() {
     )
 }
 
-export default Order
+export default Order;

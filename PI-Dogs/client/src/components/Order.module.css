@@ -35,6 +35,37 @@
     margin: auto;
 }
 
+
+
+/* .boton{
+    display: inline-block;
+
+    font-family:  font-family 5px;
+    font-size: 16px;
+    margin-top: -80px !important;
+
+    position: left;
+    top: 0%; 
+    width: 175px;
+    height: 40px;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    background-color:A7B0BB;
+  
+	margin-top: 80px;
+    left: 1250px;
+	position: left;
+    justify-content:center;
+    color: black;
+    margin-bottom: 25px;
+    border-radius: 32px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    
+} */
+
 .btn {
     width: fit-content;
     height: fit-content;
