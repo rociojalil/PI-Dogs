@@ -7,13 +7,11 @@ function Footer() {
         <div className={styles.mainFooter}>
             <div className={styles.about}>
                 <p>
-                    DogApp
+                    DogsApp
                     <br />
-                    Santiago Cañas Zapata
+                    Rocío De Luz Jalil
                     <br />
-                    2021
-                    <br />
-                    santiagozapata07@gmail.com
+                    rojalilparedes@gmail.com
                 </p>
             </div>
 
