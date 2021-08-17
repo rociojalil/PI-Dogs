@@ -1,11 +1,26 @@
 .mainFooter {
-    background-color: rgba(0, 0, 0, 0.384);
+    background-color: rgb(0, 0, 0);
     display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.contactMe p{
+    font-family: Georgia, serif;
+    /* margin: auto; */
+    /* width: 50%;
+    right: 50%; */
+    /* flex-wrap: wrap;
+    align-items: center; */
+    font-size: 25px;
+    color: #ffffff;
+    margin-top: 5px;
+    margin-left: 990px;
+    /* margin-right: 500px; */
+
 }
 
 .about p {
@@ -22,7 +37,7 @@
     
 }
 .socialMedia{
-    width: 50%;
+    /* width: 50%; */
 	display: flex;
 	justify-content: flex-end;
 
