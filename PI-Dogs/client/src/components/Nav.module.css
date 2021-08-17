@@ -19,7 +19,6 @@
 }
 
 .dogApp i{
-    font-size: 20px;
     color: #000000;
     text-shadow: 2px 2px 1px #000000;
     margin-top: 10px;
@@ -42,30 +41,30 @@
     font-family: Georgia, serif;
 } 
 
+
+
 .navigation li {
     margin: auto;
     list-style: none;
-    border-bottom:3px solid #000000 ;
+    /* border-bottom:3px solid #000000 ; */
     padding: 3px;
     
 }
 
 .navigation li a {
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
     text-decoration: none;
+    letter-spacing: 0.1rem;
     margin: auto;
     color: #ffffff;
-
-    font-weight: bold;
+    /* font-weight: bold; */
     transition: color, text-shadow 250ms;
+    transition: all 0.4s;
 } 
 
 .navigation li a:hover {
     color: #000000;
+    text-shadow: -1px -1px 10px rgb(136, 136, 136), 1px 1px 10px rgb(0, 0, 0);
+    cursor: pointer;
 } 
-
-/* .buscador {
-    grid-area: buscador;
-    margin: auto;
-}  */

@@ -12,9 +12,9 @@ function Nav() {
             <ol className={styles.navigation}>
                 <li><a href="/">Home</a></li>
                 <li><a href="/home">Dogs</a></li>
-                <li><a href="/createBreed">Create A Dog</a></li>
+                <li><a href="/createBreed">Create a Dog</a></li>
             </ol>
-            <div className={styles.buscador}>
+            <div>
                 <Buscador />
             </div>
         </div>
