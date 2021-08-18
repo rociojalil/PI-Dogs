@@ -71,7 +71,7 @@ function CreateBreed(props) {
 
     }, [])
 
-
+// cada vez que cambian los inputs de todos los anteriores voy guardando lo que va escribiendo en mi estado input
     function handleInput(e) {
         setInput({
             ...input,
@@ -82,47 +82,78 @@ function CreateBreed(props) {
                 ...input,
                 [e.target.name]: e.target.value,
             })
-        );
+            );
+            console.log(input)
     }
-
+    // on focus para q aparezcan los mensajes de como debe ser los input
     function onFocus(ev) {
         setTouched({
             ...touched,
             [ev.target.name]: true,
         });
     }
-
+    // acá enviar todos mis datos al back! crear personaje finalmente
     function handleSubmit(e) {
         e.preventDefault();
+        console.log(input)
         if (!errors.name && !errors.weight && !errors.height && !errors.life_span) {
-            axios.post('http://localhost:3001/dog', input, 
-                {
-                    method: 'POST',
-                    headers: {"Content-Type": "application/json"},
-                    body: JSON.stringify(input),
-                })
-            setInput({
-                name: '',
-                height: '',
-                weight: '',
-                life_span: '',
-                temperament: []
-            })
-            
-            alert("Your breed has been created successfully")
-            history.push('/home')
-        } else {
-            alert('Something went wrong. Please try again.')
-        }
+        dispatch(postDog(input)) }
+        alert("Your breed has been created successfully")
+        setInput({
+            name: '',
+            height: '',
+            life_span: '',
+            weight: '',
+            temperament: [],
+            image: ''
+        })
+        history.push('/home')
     }
 
+
+
+
+
+
+
+
+    //     if (!errors.name && !errors.weight && !errors.height && !errors.life_span) {
+    //         axios.post('http://localhost:3001/dog', input, 
+    //             {
+    //                 method: 'POST',
+    //                 headers: {"Content-Type": "application/json"},
+    //                 body: JSON.stringify(input),
+    //             })
+    //         setInput({
+    //             name: '',
+    //             height: '',
+    //             weight: '',
+    //             life_span: '',
+    //             temperament: []
+    //         })
+            
+    //         alert("Your breed has been created successfully")
+    //         history.push('/home')
+    //     } else {
+    //         alert('Something went wrong. Please try again.')
+    //     }
+    // }
+
+
+
+
+
+    // mensajitos de alerta con respecto a cuantos seleccionar + setInput para pasar muchos
     function handleSelect(e) {
         if (input.temperament.includes(parseInt(e.target.value))) {
             alert('You already selected this temperament. Try again.')
         } else if (input.temperament.length >= 3) {
             alert('You can select up to 3 temperaments.')
         } else {
-            setInput((prev) => ({ ...prev, temperament: [...prev.temperament, parseInt(e.target.value)] }))
+            // traeme lo que ya habia y concatenale el target value donde va a meter en un [] todo lo que yo agregue
+            setInput((prev) => ({
+                 ...prev, 
+                 temperament: [...prev.temperament, parseInt(e.target.value)] }))
         }
     }
 
@@ -157,7 +188,7 @@ function CreateBreed(props) {
             <br />
 
             <div className={styles.form}>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={e => {handleSubmit(e)}}>
 
                     <div className={styles.cards}>
                         <div>
@@ -168,6 +199,7 @@ function CreateBreed(props) {
                                 type="text"
                                 name="name"
                                 placeholder="Type..."
+                                // a todos los input le pongo handleInput para que vaya al estado
                                 onChange={handleInput}
                                 required='required'
                                 onFocus={onFocus}
@@ -220,7 +252,7 @@ function CreateBreed(props) {
                             <p className={styles.inputNames}>Life Span</p>
                             <input
                                 type="text"
-                                name="age"
+                                name="life_span"
                                 placeholder="Type..."
                                 onChange={handleInput}
                                 required='required'
@@ -237,11 +269,12 @@ function CreateBreed(props) {
 
                         <div >
                             <p className={styles.inputNames}>Temperaments</p>
+                            {/* a medida que selecciona el usuario ve lo que selecciona */}
                             <select name="temperaments" onChange={(e) => handleSelect(e)} required value={input.temperament} className={styles.dropdown}>
                                 <option>
                                     Select
                                 </option>
-
+                                {/* .id .name? */}
                                 {temperaments?.map((e) => (
                                     <option value={e.id} key={e.id}>{e.name}</option>)
                                 )}
