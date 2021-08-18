@@ -236,7 +236,7 @@ export function getHeavy() {
 
 export function getTemp() {
     return function (dispatch) {
-        return axios.get('http://localhost:3001/temperaments')
+        return axios.get('http://localhost:3001/temperament')
             .then(temp => {
                 dispatch({
                     type: 'GET_TEMP',

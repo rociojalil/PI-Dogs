@@ -106,6 +106,7 @@ catch(error){
 //GET TEMPERAMENT
 // vamos a la api y me los traigo con un map + split + flat + sort + map.
 
+
 router.get('/temperament', async (req, res, next) => {
 	try {
 		const dog = await axios.get(`${API_URL}?apikey=${API_KEY}`)
