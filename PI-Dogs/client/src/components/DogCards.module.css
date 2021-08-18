@@ -29,8 +29,8 @@
 }
 
 .cardContainer img {
-    width: 250px;
-    height: 170px;
+    width: auto;
+    height: 150px;
     display: flex;
     justify-content: center;
 }
@@ -115,16 +115,16 @@
 }
 
 .msgCharge {
-    color: #ff9100;
-    text-shadow: 2px 2px #000000;
-    font-size: 50px;
+    color: #ffffff;
+    text-shadow: 1px 1px #000000;
+    font-size: 35px;
     font-weight: bolder;
     text-align: center;
 }
 
 .containerLoading {
-    background-color: #000000c7;
-    border-radius: 50px;
+    background-color: #000000b4;
+    border-radius: 30px;
     padding: 15px;
 }
 
