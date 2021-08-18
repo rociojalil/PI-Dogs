@@ -2,11 +2,11 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { postDog, getTemp } from '../actions/actions';
-import axios from 'axios';
+// import axios from 'axios';
 import styles from './CreateBreed.module.css'
 import Nav from './Nav'
 import Footer from './Footer'
-import {Link, useHistory} from 'react-router-dom';
+import { useHistory} from 'react-router-dom';
 
 function validateForm(input) {
     let errors = {};
@@ -110,12 +110,7 @@ function CreateBreed(props) {
         history.push('/home')
     }
 
-
-
-
-
-
-
+    // forma en la cual no me funcionaba 
 
     //     if (!errors.name && !errors.weight && !errors.height && !errors.life_span) {
     //         axios.post('http://localhost:3001/dog', input, 
