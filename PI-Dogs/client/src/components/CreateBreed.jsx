@@ -96,8 +96,7 @@ function CreateBreed(props) {
     function handleSubmit(e) {
         e.preventDefault();
         console.log(input)
-        if (!errors.name && !errors.weight && !errors.height && !errors.life_span) {
-        dispatch(postDog(input)) }
+        dispatch(postDog(input)) 
         alert("Your breed has been created successfully")
         setInput({
             name: '',
