@@ -11,7 +11,7 @@
 }
 
 .cardContainer {
-    border: 2px solid #ff9100;
+    border: 2px solid #ffffff;
     width: 250px;
     height: 290px;
     margin: 1px 5px;
@@ -24,7 +24,7 @@
 .cardContainer:hover {
     /* light blue color #00e1ff 
     orange #ff9100*/
-    box-shadow: 0 0 15px 2px #ff9100;
+    box-shadow: 0 0 15px 2px #ffffff;
     border: 1px solid transparent;
 }
 
@@ -37,9 +37,9 @@
 
 .cardName {
     text-align: center;
-    color: #000000;
-    text-shadow: 2px 2px 1px #ff9100;
-    font-size: 23px;
+    color: #ffffff;
+    text-shadow: 2px 2px 1px #000000;
+    font-size: 22px;
     font-weight: bold;
     letter-spacing: 1px;
     margin-bottom: 5px;
@@ -104,7 +104,7 @@
     padding: 20px;
     justify-content: center;
     border-radius: 20px;
-    box-shadow: 0px 0px 15px 2px #ff9100;
+    box-shadow: 0px 0px 15px 2px #ff910088;
 }
 
 .cardError img {
@@ -130,14 +130,15 @@
 .detail p {
     text-align: center;
     /* margin: auto; */
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
-    border: 1px solid #000000;
+    border: 1px solid #ffffff;
+    background: rgb(0, 0, 0);
     border-radius: 5px;
     margin-top: 10px;
     /* background-color: #ff9100; */
-    color: #000000;
-    text-shadow: 2px 2px 1px #ff9100;
+    color: #ffffff;
+    text-shadow: 2px 2px 1px #000000;
     /* width: fit-content; */
     padding: 5px 15px;
 }

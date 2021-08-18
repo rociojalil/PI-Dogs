@@ -97,28 +97,10 @@ function Order() {
             </form>
 
 
-
-            {/* <div  className={styles.temperaments}>
-                <form onSubmit={handleSubmit} >
-                    <label>Filter by temps </label><br />
-                    <select onChange={handleChange} name="temperaments" value={selectedTemp} className={styles.dropdown}>
-                        {temp?.map(t => {
-                            return (
-                                <option value={t.name}>{t.name}</option>
-                            )
-                        })}
-                    </select>
-                    
-                    <button type="submit" className={styles.btn}> Filter</button>
-                </form>
-            </div> */}
-
-
-
-            <div className={styles.temperaments}>
+        <div className={styles.temperaments}>
             <form className={styles.btn1} onSubmit={handleSubmit}>
                 <select className={styles.btn1} onChange={handleChange} name="temperaments" value={selectedTemp} type='text'>
-                <option value="" disabled selected>Filter by Temp...</option>
+                    <option value="" disabled selected>Filter by Temp...</option>
                     {temp?.map(t => {
                         return (
                             <option  value={t.name}>{t.name}</option>
@@ -126,7 +108,7 @@ function Order() {
                         })}
                     
                 </select>
-                <button type="submit" className={styles.btn1}> Search </button>
+                    <button type="submit" className={styles.btn1}> Search </button>
             </form>
             </div>
 
@@ -141,7 +123,6 @@ function Order() {
                
             </form>
             </div>
-
           </div>
     )
 }
