@@ -80,16 +80,16 @@ function Order() {
 
   
     return (
-        <div  className={styles.mainDiv}>
-            <div className={styles.alphabetical}>
-            <form className={styles.btn}>
+        <div className={styles.jajaja}>
+            <form className={styles.conteiner}>
                 <select className={styles.btn} onChange={orderAlph} value='' name="by">
                     <option value="" disabled selected>Order by </option>
                     <option value='getAZ'onClick={(e) => getAZ(e)}>Alphabet - A-Z</option>
                     <option value='getZA'onClick={(e) => getZA(e)}>Alphabet - Z-A</option>
                 </select>
             </form>
-            <form className={styles.btn}>
+    
+            <form className={styles.weight}>
                 <select className={styles.btn} onChange={orderWeight} value='' name="by">
                     <option value="" disabled selected>Order by Weight</option>
                     <option value='getLight'onClick={(e) => getLight(e)}>Min - Max</option>
@@ -97,8 +97,8 @@ function Order() {
                 </select>
             </form>
 
-            </div>
-            <form className={styles.btn} onSubmit={handleSubmit}>
+            <div className={styles.temperaments}>
+            <form className={styles.btn1} onSubmit={handleSubmit}>
                 <select className={styles.btn} onChange={handleChange} name="temperaments" value={selectedTemp}>
                     <option> Filter by Temp</option>
                     {temp?.map((t) => (
@@ -108,9 +108,11 @@ function Order() {
                     
                 </select>
             </form>
-            
-            <form className={styles.btn} >
-                <select className={styles.btn} onChange={handleSelect}> 
+            </div>
+
+            <div className={styles.source}>
+            <form>
+                <select className={styles.btn2} onChange={handleSelect}> 
                     <option value="" disabled selected>Select source</option>
                     <option value='DB'>Created</option>
 					<option value='API'>API</option>
@@ -118,6 +120,8 @@ function Order() {
                 </select>
                
             </form>
+            </div>
+
           </div>
     )
 }
