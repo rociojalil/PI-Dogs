@@ -46,28 +46,31 @@ function validateForm(input) {
 
 function CreateBreed(props) {
 
+    const dispatch = useDispatch();
+    // me traigo los temperamentos del estado temps
+    const temperaments = useSelector(state => state.temps)
     const [errors, setErrors] = useState({});
     const history = useHistory();
     const [touched, setTouched] = useState({});
 
+// acá para guardarme datos del form - un objeto con todo 
     const [input, setInput] = useState({
         name: '',
         height: '',
         life_span: '',
         weight: '',
-        temperament: [],
+        temperament: [],    //array vacío para crear más de uno
         image:''
     })
 
-    const dispatch = useDispatch();
-
+    // const dispatch = useDispatch();
+    // despachar para renderizar
     useEffect(() => {
 
         dispatch(getTemp())
 
     }, [])
 
-    const temperaments = useSelector(state => state.temps)
 
     function handleInput(e) {
         setInput({
@@ -143,7 +146,7 @@ function CreateBreed(props) {
 
     return (
         <div className={styles.main}>
-            
+                {/* así no hago botón para volver la barra de navegación se muestra siempre y así podes volver */}
                 <Nav />
            
             <br />
@@ -158,6 +161,7 @@ function CreateBreed(props) {
 
                     <div className={styles.cards}>
                         <div>
+                            <p className={styles.title}>How would you like your dog to be?</p>
                             <p className={styles.inputNames}>Name</p>
 
                             <input
