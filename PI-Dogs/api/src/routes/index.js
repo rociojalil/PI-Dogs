@@ -14,7 +14,7 @@ const router = Router();
 router.post("/dog", async (req, res, next) => {
 	const {name, weight, height, life_span, temperament } = req.body
 	try {
-		const createdDog = await Dog.create({
+			await Dog.create({
 			id:uuidv4(),
 			name: name,
 			weight,

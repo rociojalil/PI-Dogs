@@ -6,6 +6,7 @@ import axios from 'axios';
 import styles from './CreateBreed.module.css'
 import Nav from './Nav'
 import Footer from './Footer'
+import {useHistory} from 'react-router-dom';
 
 function validateForm(input) {
     let errors = {};
@@ -18,7 +19,7 @@ function validateForm(input) {
         errors.weight = "Type a valid weight range";
     } else if (!/\d{1,2} - \d{1,2}/g.test(input.weight)) {
         errors.weight =
-            "Weight must have min-max values. Example: '25-30'";
+            "Weight must have min-max values. Example: '10-50'";
     } else {
         errors.weight = "";
     }
@@ -27,7 +28,7 @@ function validateForm(input) {
         errors.height = "Type a valid height range";
     } else if (!/\d{1,2}-\d{1,2}/g.test(input.height)) {
         errors.height =
-            "Height must have min-max values. Example: '25-30'";
+            "Height must have min-max values. Example: '10-50'";
     } else {
         errors.height = "";
     }
@@ -35,7 +36,7 @@ function validateForm(input) {
         errors.age = "Type a valid life span";
     } else if (!/\d{1,2}-\d{1,2}/g.test(input.age)) {
         errors.age =
-            "Life span must have min-max values. Example: '25-30'";
+            "Life span must have min-max values. Example: '1-20'";
     } else {
         errors.age = "";
     }
@@ -43,16 +44,19 @@ function validateForm(input) {
 };
 
 
-function CreateBreed() {
+function CreateBreed(props) {
 
     const [errors, setErrors] = useState({});
+    const history = useHistory();
     const [touched, setTouched] = useState({});
+
     const [input, setInput] = useState({
         name: '',
         height: '',
-        age: '',
+        life_span: '',
         weight: '',
-        temperament: []
+        temperament: [],
+        image:''
     })
 
     const dispatch = useDispatch();
@@ -87,21 +91,23 @@ function CreateBreed() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        if (
-            !errors.name &&
-            !errors.weight &&
-            !errors.height &&
-            !errors.age
-        ) {
-            axios.post('http://localhost:3001/dog', input)
+        if (!errors.name && !errors.weight && !errors.height && !errors.life_span) {
+            axios.post('http://localhost:3001/dog', input, 
+                {
+                    method: 'POST',
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify(input),
+                })
             setInput({
                 name: '',
                 height: '',
                 weight: '',
-                age: '',
+                life_span: '',
                 temperament: []
             })
+            
             alert("Your breed has been created successfully")
+            history.push('/home')
         } else {
             alert('Something went wrong. Please try again.')
         }
