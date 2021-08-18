@@ -27,6 +27,10 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 breedsDetail: action.payload
             }
+        case 'POST':
+            return {
+                ...state
+            }
         case 'order_ZA':
             return {
                 ...state,

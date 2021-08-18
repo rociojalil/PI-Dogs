@@ -44,6 +44,17 @@ export function getBreedsRace(race) {
     }
 };
 
+// ese (payload) es lo que me llega del front
+export function postDog(payload) {
+    return async function(dispatch) {
+        const res = await axios.post('http://localhost:3001/dog', payload)
+        return {
+            type: 'POST',
+            res
+        }
+    };
+};
+
 
 export function getZA() {
     return function (dispatch) {
@@ -61,6 +72,7 @@ export function getZA() {
             })
     }
 }
+
 export function getAZ() {
     return function (dispatch) {
         return axios.get('http://localhost:3001/dogs')

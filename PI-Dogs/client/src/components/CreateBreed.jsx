@@ -1,12 +1,12 @@
 
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getTemp } from '../actions/actions';
+import { postDog, getTemp } from '../actions/actions';
 import axios from 'axios';
 import styles from './CreateBreed.module.css'
 import Nav from './Nav'
 import Footer from './Footer'
-import {useHistory} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 
 function validateForm(input) {
     let errors = {};
