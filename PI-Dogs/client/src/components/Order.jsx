@@ -41,11 +41,18 @@ function Order() {
         dispatch(getTemp())
     }, [])
 
-    
+    // Filtro Temperament
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        setTempToFilterBy([...tempToFilterBy, selectedTemp]);
+        handleClick()
+    }
+
     function handleChange(e) {
         setSelectedTemp(e.target.value)
     }
-    // Filtro Temperamento
+
     function handleClick() {
         let filtered = []
         breed?.forEach((b) => {
@@ -56,20 +63,12 @@ function Order() {
             } else {
                 if (b.temperament?.includes(selectedTemp)) {
                     filtered.push(b)
-                } else {
-                    console.log('nada')
-                }
-                
-            }})
-            
-            dispatch(filter(filtered))
-        }
-        function handleSubmit(e) {
-            e.preventDefault();
-            setTempToFilterBy([...tempToFilterBy, selectedTemp]);
-            handleClick()
-        }
-        
+                } 
+        }})
+
+        dispatch(filter(filtered))
+    }
+
         // Filtro BD-API
         function handleSelect(e){
             dispatch(getSource(e.target.value))
@@ -80,10 +79,10 @@ function Order() {
 
   
     return (
-        <div className={styles.jajaja}>
+        <div className={styles.contenedor}>
             <form className={styles.conteiner}>
                 <select className={styles.btn} onChange={orderAlph} value='' name="by">
-                    <option value="" disabled selected>Order by </option>
+                    <option value="" disabled selected>Order by Alphabet </option>
                     <option value='getAZ'onClick={(e) => getAZ(e)}>Alphabet - A-Z</option>
                     <option value='getZA'onClick={(e) => getZA(e)}>Alphabet - Z-A</option>
                 </select>
@@ -97,16 +96,37 @@ function Order() {
                 </select>
             </form>
 
+
+
+            {/* <div  className={styles.temperaments}>
+                <form onSubmit={handleSubmit} >
+                    <label>Filter by temps </label><br />
+                    <select onChange={handleChange} name="temperaments" value={selectedTemp} className={styles.dropdown}>
+                        {temp?.map(t => {
+                            return (
+                                <option value={t.name}>{t.name}</option>
+                            )
+                        })}
+                    </select>
+                    
+                    <button type="submit" className={styles.btn}> Filter</button>
+                </form>
+            </div> */}
+
+
+
             <div className={styles.temperaments}>
             <form className={styles.btn1} onSubmit={handleSubmit}>
-                <select className={styles.btn} onChange={handleChange} name="temperaments" value={selectedTemp}>
-                    <option> Filter by Temp</option>
-                    {temp?.map((t) => (
-                        <option  value={t.name} key={t.id}>{t.name}
-                        </option>
-                    ))}
+                <select className={styles.btn1} onChange={handleChange} name="temperaments" value={selectedTemp} type='text'>
+                <option value="" disabled selected>Filter by Temp...</option>
+                    {temp?.map(t => {
+                        return (
+                            <option  value={t.name}>{t.name}</option>
+                        )
+                        })}
                     
                 </select>
+                <button type="submit" className={styles.btn1}> Search </button>
             </form>
             </div>
 
