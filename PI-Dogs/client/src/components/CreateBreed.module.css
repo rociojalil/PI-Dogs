@@ -27,8 +27,9 @@
 }
 
 .inputNames {
+    font-family: "Segoe UI";
     text-align: center;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     color: #ffffff;
     text-shadow: -1px 2px #000000;
@@ -41,7 +42,7 @@
     text-align: center;
     background-color: transparent;
     color: white;
-    font-size: 22px;
+    font-size: 20px;
     border: none;
     border: 2px solid #ffffff;
     border-radius: 8px;
@@ -62,7 +63,7 @@
     text-align: center;
     background-color: transparent;
     color: white;
-    font-size: 25px;
+    font-size: 22px;
     border: none;
     border: 2px solid #ffffff;
     border-radius: 5px;
@@ -79,8 +80,9 @@
 }
 
 .temp {
+    font-family: "Segoe UI";
     padding: 5px;
-    font-size: 28px;
+    font-size: 25px;
     font-weight: bold;
     border-radius: 5px;
     color: #ffffff;
@@ -131,7 +133,7 @@
 
 .errorMsg {
     text-align: center;
-    color: #ffffff9c;
+    color: #8a8a8a;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     font-weight: bold;

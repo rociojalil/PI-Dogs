@@ -167,7 +167,7 @@ function CreateBreed(props) {
                             <input
                                 type="text"
                                 name="name"
-                                placeholder="Breed name"
+                                placeholder="Type..."
                                 onChange={handleInput}
                                 required='required'
                                 onFocus={onFocus}
@@ -186,7 +186,7 @@ function CreateBreed(props) {
                             <input
                                 type="text"
                                 name="weight"
-                                placeholder="Breed weight"
+                                placeholder="Type..."
                                 onChange={handleInput}
                                 required='required'
                                 onFocus={onFocus}
@@ -204,7 +204,7 @@ function CreateBreed(props) {
                             <input
                                 type="text"
                                 name="height"
-                                placeholder="Breed height"
+                                placeholder="Type..."
                                 onChange={handleInput}
                                 required='required'
                                 onFocus={onFocus}
@@ -221,7 +221,7 @@ function CreateBreed(props) {
                             <input
                                 type="text"
                                 name="age"
-                                placeholder="Breed life span"
+                                placeholder="Type..."
                                 onChange={handleInput}
                                 required='required'
                                 onFocus={onFocus}
