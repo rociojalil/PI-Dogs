@@ -49,10 +49,11 @@
     list-style: none;
     display: flex;
     justify-content: center;
-    background-color: #000000d8;
-    width: 450px;
+    background-color: #3b3b3b;
+    width: 400px;
     margin: auto;
     border-radius: 20px;
+    border: 2px solid white;
 }
 
 .pagination li {
@@ -69,7 +70,7 @@
 
 .pagination li.active {
     /* background-color: white; */
-    color: #ff9100;
+    color: #000000;
 }
 
 .pagination li button {
@@ -79,7 +80,7 @@
     color: white;
     cursor: pointer;
     padding: 2px;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     border-radius: 20px;
     transition: color 500ms;
@@ -88,7 +89,7 @@
 .pagination li button:hover {
     /* background-color: white; */
     border-radius: 20px;
-    color: #ff9100;
+    color: #000000;
 }
 
 .msgError {
