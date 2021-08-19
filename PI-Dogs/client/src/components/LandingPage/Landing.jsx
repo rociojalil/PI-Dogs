@@ -44,26 +44,3 @@ function Landing() {
 
 export default Landing;
 
-
-// function Landing() {
-//     return (
-//         <LazyLoad>
-//             <div className={styles.divMain}>
-
-
-//                 <div className={styles.card}>
-
-//                         <label><h1>Dog App</h1></label>
-//                     <Link to='/home' style={{ color: "black", textDecoration: "none" }}>
-//                         <button className={styles.btnStart}>
-//                             Start
-//                         </button>
-//                     </Link>
-//                 </div>
-
-//             </div>
-//         </LazyLoad>
-//     )
-// }
-
-// export default Landing

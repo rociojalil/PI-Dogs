@@ -10,7 +10,7 @@ function Nav() {
                 {/* <i class="fas fa-paw"></i> */}
             </div >
             <ol className={styles.navigation}>
-                <li><a href="/">Home</a></li>
+                <li><a href="/">Welcome</a></li>
                 <li><a href="/home">Dogs</a></li>
                 <li><a href="/createBreed">Create a Dog</a></li>
             </ol>

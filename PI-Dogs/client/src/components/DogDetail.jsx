@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getBreeds } from "../actions/actions";
-import styles from "./dogsDetail.module.css";
+import styles from "./DogDetail.module.css";
 import Nav from './Nav'
 import Footer from './Footer'
 
