@@ -11,31 +11,51 @@ import { Link } from 'react-router-dom';
 function DogCards() {
 
 
-    const breed = useSelector((state) => state.breeds);
+    
 
+    // guardar en estados locales
+
+    // estado con mi pagina actual seteado en 1
     const [currentPage, setCurrentPage] = useState(1)
-    // eslint-disable-next-line
-    const [itemsPerPage, setitemsPerPage] = useState(8)
-    // eslint-disable-next-line
+    // perros x pagina 8
+    const [dogsPerPage, setDogsPerPage] = useState(8)
+    // indice del ultimo dog va a ser la pagina actual donde estoy x la cantidad de perros x pag. indexoflastItem son 8
+    const indexOfLastItem = currentPage * dogsPerPage;
+    // indice primer dog. indice del ultimo menos dogs x pagina eso da 0
+    const indexOfFirstItem = indexOfLastItem - dogsPerPage;
+    // todos dogs que van a estar en la pagina actual me los traigo con useSelector
+    const breed = useSelector((state) => state.breeds);
+    // slice: toma porcion el [] - que agarre el primero(0) y el ultimo (7 o 8)? toma el ultimo o no lo toma
+    const currentItems = breed?.slice(indexOfFirstItem, indexOfLastItem);
+
+
+    const handleClick = (event) => {
+        setCurrentPage(Number(event.target.id))
+    }
+ 
+    
+    const pages = [];
+    // math-ceil redondea para arriba me renderiza todos los personajes x la cantidad q quiero x pag
+    for (let i = 1; i <= Math.ceil(breed?.length / dogsPerPage); i++) {
+        pages.push(i);
+    }
+
+
+
+
+
+
+
+
+
     const [pageNumberLimit, setpageNumberLimit] = useState(5)
     const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5)
     const [minPageNumberLimit, setminPageNumberLimit] = useState(0)
 
 
-    const handleClick = (event) => {
-        setCurrentPage(Number(event.target.id))
 
-
-    }
-
-    const pages = [];
-
-    for (let i = 1; i <= Math.ceil(breed?.length / itemsPerPage); i++) {
-        pages.push(i);
-    }
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = breed?.slice(indexOfFirstItem, indexOfLastItem);
+   
+    
 
     const renderPageNumbers = pages.map(number => {
         if (number < maxPageNumberLimit + 1 && number > minPageNumberLimit) {
@@ -92,7 +112,6 @@ function DogCards() {
     function displayBreeds(array) {
 
         const breedsToDisplay = array
-        console.log('holaaaa', breedsToDisplay)
 
         if (typeof breedsToDisplay === "string") {
             return (
@@ -138,6 +157,7 @@ function DogCards() {
                                                 </p>
                                                 </Link>
                                             </div>
+                                            
 
 
                                     </div>
@@ -150,10 +170,17 @@ function DogCards() {
                     )
                 })
 
-            ) :
-                <div className={styles.containerLoading}>
-                    <p className={styles.msgCharge}>Loading...</p>
-                </div>
+            ) : <div > 
+                <p className={styles.doggy}>What did you mean? No dogs.</p>
+            <iframe  src="https://giphy.com/embed/7XuKKmGiaxXe6EjOj4" width="384" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <p><a href="https://giphy.com/gifs/dog-face-front-camera-7XuKKmGiaxXe6EjOj4">Gif</a></p>
+        
+              
+          </div>
+
+                // <div className={styles.containerLoading}>
+                //     <p className={styles.msgCharge}>Loading...</p>
+                // </div>
         }
 
     }

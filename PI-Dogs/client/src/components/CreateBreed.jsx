@@ -32,13 +32,13 @@ function validateForm(input) {
     } else {
         errors.height = "";
     }
-    if (!input.age) {
-        errors.age = "Type a valid life span";
-    } else if (!/\d{1,2}-\d{1,2}/g.test(input.age)) {
-        errors.age =
+    if (!input.life_span) {
+        errors.life_span = "Type a valid life span";
+    } else if (!/\d{1,2}-\d{1,2}/g.test(input.life_span)) {
+        errors.life_span =
             "Life span must have min-max values. Example: '1-20'";
     } else {
-        errors.age = "";
+        errors.life_span = "";
     }
     return errors;
 };
@@ -254,8 +254,8 @@ function CreateBreed(props) {
                                 value={input.age}
 
                             ></input>
-                            {errors.age && touched.age && (
-                                <p className={styles.errorMsg}>{errors.age}</p>
+                            {errors.life_span && touched.life_span && (
+                                <p className={styles.errorMsg}>{errors.life_span}</p>
                             )}
                         </div>
 
