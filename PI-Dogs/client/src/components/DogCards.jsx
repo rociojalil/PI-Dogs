@@ -171,7 +171,7 @@ function DogCards() {
                 })
 
             ) : <div > 
-                <p className={styles.doggy}>What did you mean? No dogs.</p>
+                <p className={styles.doggy}>No dogs</p>
             <iframe  src="https://giphy.com/embed/7XuKKmGiaxXe6EjOj4" width="384" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
             <p><a href="https://giphy.com/gifs/dog-face-front-camera-7XuKKmGiaxXe6EjOj4">Gif</a></p>
         

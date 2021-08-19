@@ -150,6 +150,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getBreeds } from "../actions/actions";
 import styles from "./dogsDetail.module.css";
 import Nav from './Nav'
+import Footer from './Footer'
 
 function DogDetail({ match }) {
   const { id } = match.params;
@@ -198,7 +199,7 @@ function DogDetail({ match }) {
       <div className={styles.main}>
         <div className={styles.dogDetail}>
           <h3 className={styles.dogName}> {detail[0].name} </h3>
-          <div className={styles.detail}>
+          <div>
             <img className={styles.img} src={detail[0].image.url} />
             <ul className={styles.dogTemp}>
             <p>Temperaments: {detail[0].temperament}</p>
@@ -210,6 +211,7 @@ function DogDetail({ match }) {
           </div>
         </div>
       </div>
+      <Footer/>
       </div>
     );
 }
