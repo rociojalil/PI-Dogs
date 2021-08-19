@@ -18,7 +18,7 @@ function DogCards() {
     // estado con mi pagina actual seteado en 1
     const [currentPage, setCurrentPage] = useState(1)
     // perros x pagina 8
-    const [dogsPerPage, setDogsPerPage] = useState(8)
+    const [dogsPerPage, setDogsPerPage] = useState(9)
     // indice del ultimo dog va a ser la pagina actual donde estoy x la cantidad de perros x pag. indexoflastItem son 8
     const indexOfLastItem = currentPage * dogsPerPage;
     // indice primer dog. indice del ultimo menos dogs x pagina eso da 0
