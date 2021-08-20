@@ -14,7 +14,7 @@ const router = Router();
 router.post("/dog", async (req, res, next) => {
 	const {name, weight, height, life_span, temperament } = req.body
 	try {
-			await Dog.create({
+		let dog = await Dog.create({
 			id:uuidv4(),
 			name: name,
 			weight,
@@ -22,10 +22,12 @@ router.post("/dog", async (req, res, next) => {
 			life_span,
 			image: 'https://bit.ly/36J26Nu',
 			db: true
-		}).then((raza) => res.send(raza.addTemperament(temperament)));
+		});
+		await dog.addTemperament(temperament)
+
+		console.log(temperament)
 			// const id = uuidv4();
 			// newDog = await Dog.create({id, name, height, weight, life_span})
-			// await newDog.setTemperaments(temperaments)
 		}
 		catch (error) {
 			next(error)

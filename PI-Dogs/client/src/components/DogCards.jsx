@@ -33,18 +33,11 @@ function DogCards() {
         setCurrentPage(Number(event.target.id))
     }
  
-    
     const pages = [];
     // math-ceil redondea para arriba me renderiza todos los personajes x la cantidad q quiero x pag
     for (let i = 1; i <= Math.ceil(breed?.length / dogsPerPage); i++) {
         pages.push(i);
     }
-
-
-
-
-
-
 
 
 
@@ -136,7 +129,7 @@ function DogCards() {
                                         
 
                                         {d.id.length ?
-                                            // eslint-disable-next-line
+                                            
                                             <LazyLoad><img src='https://phantom-marca.unidadeditorial.es/252acdd64f48851f815c16049a789f23/resize/1320/f/jpg/assets/multimedia/imagenes/2021/04/19/16188479459744.jpg' /></LazyLoad>
 
                                             :
@@ -190,6 +183,7 @@ function DogCards() {
             
             
             <div className={styles.main}>
+                {/* primero fijate si hay algo si es asi renderiza mi filtro si no mostra mensaje de error */}
                 {filteredBreeds?.length > 0 ?
                     displayBreeds(filteredBreeds)
                     :
